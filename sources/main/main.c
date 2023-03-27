@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: imisumi <imisumi@student.42.fr>            +#+  +:+       +#+        */
+/*   By: ichiro <ichiro@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/20 17:45:45 by ichiro            #+#    #+#             */
-/*   Updated: 2023/03/16 14:28:05 by imisumi          ###   ########.fr       */
+/*   Updated: 2023/03/25 17:12:46 by ichiro           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ void	error_alarm(char *str)
 			i++;
 		}
 	}
-	system("leaks push_swap");
+	// system("leaks push_swap");
 	exit(1);
 }
 

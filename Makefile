@@ -3,16 +3,26 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: imisumi <imisumi@student.42.fr>            +#+  +:+       +#+         #
+#    By: ichiro <ichiro@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/05/19 21:21:36 by anolivei          #+#    #+#              #
-#    Updated: 2023/03/16 13:07:45 by imisumi          ###   ########.fr        #
+#    Updated: 2023/03/27 03:28:40 by ichiro           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = push_swap
-SRC_DIR = sources
+NAME_BONUS = checker
+SRC_DIR = sources/main
+SRC_BNS_DIR = sources/bonus
 OBJ_DIR = .objs
+OBJ_BNS_DIR = .objs_bns
+
+CC = clang
+HEAD = -I./includes
+HEAD_BNS = -I./includes/bonus
+CFLAGS = -g 
+# CFLAGS = -g -Wall -Werror -Wextra
+RM = /bin/rm -rf
 
 SRC =	$(SRC_DIR)/main.c \
 		$(SRC_DIR)/push.c \
@@ -35,11 +45,15 @@ SRC =	$(SRC_DIR)/main.c \
 
 OBJ = $(patsubst $(SRC_DIR)%.c, $(OBJ_DIR)%.o, $(SRC))
 
-CC = clang
-HEAD = -I./includes
-CFLAGS = -g -Wall -Werror -Wextra
-# -fsanitize=address
-RM = /bin/rm -rf
+SRC_BNS =	$(SRC_BNS_DIR)/checker.c \
+			$(SRC_BNS_DIR)/swap.c \
+			$(SRC_BNS_DIR)/push.c \
+			$(SRC_BNS_DIR)/rotate.c \
+			$(SRC_BNS_DIR)/reverse_rotate.c \
+			$(SRC_BNS_DIR)/get_next_line.c \
+			$(SRC_BNS_DIR)/get_next_line_utils.c 
+
+OBJ_BNS = $(patsubst $(SRC_BNS_DIR)%.c, $(OBJ_BNS_DIR)%.o, $(SRC_BNS))
 
 all: $(NAME)
 
@@ -50,6 +64,21 @@ $(OBJ_DIR)/%.o: $(SRC_DIR)/%.c
 		@mkdir -p $(OBJ_DIR)
 		@$(CC) $(CFLAGS) $(HEAD) -c $< -o $@
 
+bonus: $(NAME_BONUS)
+
+$(NAME_BONUS): $(OBJ_BNS)
+		$(CC) $(OBJ_BNS) $(HEAD_BNS) $(CFLAGS) -o $(NAME_BONUS)
+
+$(OBJ_BNS_DIR)/%.o: $(SRC_BNS_DIR)/%.c
+		@mkdir -p $(OBJ_BNS_DIR)
+		@$(CC) $(CFLAGS) $(HEAD_BNS) -c $< -o $@
+
+tester: all
+		bash lfrasson_tester.sh
+
+vis:
+		python3 -m push_swap_gui
+
 debug_mac: $(OBJ)
 		@gcc $(HEAD) $(SRC) $(CFLAGS) -o "push_swap_debug"
 
@@ -58,9 +87,11 @@ debug_linux:
 
 clean:
 		@$(RM) $(OBJ_DIR)
+		@$(RM) $(OBJ_BNS_DIR)
 
 fclean: clean
 		@$(RM) $(NAME)
+		@$(RM) $(NAME_BONUS)
 		@$(RM) push_swap_debug
 		@$(RM) push_swap_debug.dSYM
 
