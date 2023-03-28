@@ -6,7 +6,7 @@
 /*   By: ichiro <ichiro@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/26 20:27:56 by ichiro            #+#    #+#             */
-/*   Updated: 2023/03/27 03:32:54 by ichiro           ###   ########.fr       */
+/*   Updated: 2023/03/28 18:53:45 by ichiro           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 # define CHECKER_H
 
 # define BUFFER_SIZE 8
-# define NULL ((void*)0)
 
 # include <stdarg.h>
 # include <stdio.h>
@@ -22,7 +21,6 @@
 # include <unistd.h>
 # include <fcntl.h>
 # include <string.h>
-
 
 typedef struct s_list
 {
@@ -39,6 +37,16 @@ typedef struct s_data
 	t_list	*stack_a;
 	t_list	*stack_b;
 }	t_data;
+
+void	new_node(t_list **stack_a, int number);
+void	error_alarm(char *str);
+void	print_stacks(t_list **stack_a);
+int		ft_atoi(const char *nptr);
+int		ft_strcmp(const char *s1, const char *s2);
+void	do_action(char *line, t_list **a, t_list **b);
+int		check_sorted(t_list **stack_a, t_list **stack_b);
+void	create_list(t_list **stack_a, int argc, char **argv);
+void	get_input(t_list **stack_a, t_list **stack_b);
 
 // GET NEXT LINE
 char	*get_next_line(int fd);

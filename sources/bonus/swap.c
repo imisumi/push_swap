@@ -6,7 +6,7 @@
 /*   By: ichiro <ichiro@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/24 00:20:06 by ichiro            #+#    #+#             */
-/*   Updated: 2023/03/27 02:37:48 by ichiro           ###   ########.fr       */
+/*   Updated: 2023/03/27 05:00:54 by ichiro           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,6 @@ void	sa(t_list **stack_a)
 	*stack_a = sec;
 	sec->next = first;
 	first->next = temp;
-	write(1, "sa\n", 3);
 	return ;
 }
 
@@ -44,6 +43,11 @@ void	sb(t_list **stack_b)
 	*stack_b = sec;
 	sec->next = first;
 	first->next = temp;
-	write(1, "sb\n", 3);
 	return ;
+}
+
+void	ss(t_list **stack_a, t_list **stack_b)
+{
+	sa(stack_a);
+	sb(stack_b);
 }

@@ -6,12 +6,11 @@
 /*   By: ichiro <ichiro@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/24 00:25:10 by ichiro            #+#    #+#             */
-/*   Updated: 2023/03/27 03:24:58 by ichiro           ###   ########.fr       */
+/*   Updated: 2023/03/27 04:57:31 by ichiro           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "checker.h"
-#include "push_swap.h"
 
 void	reverse_rotate_stack(t_list **stack)
 {
@@ -38,7 +37,6 @@ void	rra(t_list **stack_a)
 	if (*stack_a == NULL || (*stack_a)->next == NULL)
 		return ;
 	reverse_rotate_stack(stack_a);
-	write(1, "rra\n", 4);
 	return ;
 }
 
@@ -47,7 +45,6 @@ void	rrb(t_list **stack_b)
 	if (*stack_b == NULL || (*stack_b)->next == NULL)
 		return ;
 	reverse_rotate_stack(stack_b);
-	write(1, "rrb\n", 4);
 	return ;
 }
 
@@ -58,6 +55,5 @@ void	rrr(t_list **stack_a, t_list **stack_b)
 		return ;
 	reverse_rotate_stack(stack_a);
 	reverse_rotate_stack(stack_b);
-	write(1, "rrr\n", 4);
 	return ;
 }

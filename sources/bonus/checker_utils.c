@@ -1,18 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   checker_utils.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ichiro <ichiro@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/20 17:45:45 by ichiro            #+#    #+#             */
-/*   Updated: 2023/03/28 18:19:07 by ichiro           ###   ########.fr       */
+/*   Created: 2023/03/28 17:52:48 by ichiro            #+#    #+#             */
+/*   Updated: 2023/03/28 18:25:13 by ichiro           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "checker.h"
 
-// error meseage
 void	error_alarm(char *str)
 {
 	int	i;
@@ -29,7 +28,37 @@ void	error_alarm(char *str)
 	exit(1);
 }
 
-// ascii to integer
+void	print_stacks(t_list **stack_a)
+{
+	t_list	*a;
+
+	a = *stack_a;
+	printf("\nA\n-\n");
+	while (a != NULL)
+	{
+		if (a)
+		{
+			printf("%d\n", a->num);
+			a = a->next;
+		}
+	}
+	printf("\n");
+}
+
+int	ft_strcmp(const char *s1, const char *s2)
+{
+	int	i;
+
+	i = 0;
+	while (s1[i] == s2[i])
+	{
+		if (s1[i] == '\0')
+			return (0);
+		i++;
+	}
+	return (s1[i] - s2[i]);
+}
+
 int	ft_atoi(const char *nptr)
 {
 	int			i;
@@ -50,36 +79,11 @@ int	ft_atoi(const char *nptr)
 		if (nptr[i] >= '0' && nptr[i] <= '9')
 			res = res * 10 + nptr[i] - 48;
 		else
-			error_alarm("Error\n");
+			error_alarm("Error1\n");
 		i++;
 	}
 	res = res * neg;
 	if (res > 2147483647 || res < -2147483648)
-		error_alarm("Error\n");
+		error_alarm("Error2\n");
 	return (res);
-}
-
-int	main(int argc, char *argv[])
-{
-	t_data	data;
-	int		i;
-
-	data.stack_a = NULL;
-	data.stack_b = NULL;
-	i = 1;
-	if (argc <= 1)
-		exit(0);
-	while (i < argc)
-	{
-		new_node(&data.stack_a, ft_atoi(argv[i]));
-		i++;
-	}
-	num_index_100(&data.stack_a, argc);
-	if (!check_sorted_a(&data.stack_a))
-		error_alarm(NULL);
-	if (argc < 7)
-		small_stack(&data.stack_a, &data.stack_b, argc);
-	else
-		big_stack(&data.stack_a, &data.stack_b, argc);
-	exit(0);
 }

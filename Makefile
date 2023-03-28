@@ -6,7 +6,7 @@
 #    By: ichiro <ichiro@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/05/19 21:21:36 by anolivei          #+#    #+#              #
-#    Updated: 2023/03/27 03:28:40 by ichiro           ###   ########.fr        #
+#    Updated: 2023/03/28 18:54:42 by ichiro           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,7 +19,6 @@ OBJ_BNS_DIR = .objs_bns
 
 CC = clang
 HEAD = -I./includes
-HEAD_BNS = -I./includes/bonus
 CFLAGS = -g 
 # CFLAGS = -g -Wall -Werror -Wextra
 RM = /bin/rm -rf
@@ -30,7 +29,6 @@ SRC =	$(SRC_DIR)/main.c \
 		$(SRC_DIR)/reverse_rotate.c \
 		$(SRC_DIR)/index.c \
 		$(SRC_DIR)/new_node.c \
-		$(SRC_DIR)/print.c \
 		$(SRC_DIR)/small_stack.c \
 		$(SRC_DIR)/big_stack.c \
 		$(SRC_DIR)/swap.c \
@@ -46,9 +44,11 @@ SRC =	$(SRC_DIR)/main.c \
 OBJ = $(patsubst $(SRC_DIR)%.c, $(OBJ_DIR)%.o, $(SRC))
 
 SRC_BNS =	$(SRC_BNS_DIR)/checker.c \
+			$(SRC_BNS_DIR)/checker_utils.c \
 			$(SRC_BNS_DIR)/swap.c \
 			$(SRC_BNS_DIR)/push.c \
 			$(SRC_BNS_DIR)/rotate.c \
+			$(SRC_BNS_DIR)/new_node.c \
 			$(SRC_BNS_DIR)/reverse_rotate.c \
 			$(SRC_BNS_DIR)/get_next_line.c \
 			$(SRC_BNS_DIR)/get_next_line_utils.c 
@@ -67,11 +67,11 @@ $(OBJ_DIR)/%.o: $(SRC_DIR)/%.c
 bonus: $(NAME_BONUS)
 
 $(NAME_BONUS): $(OBJ_BNS)
-		$(CC) $(OBJ_BNS) $(HEAD_BNS) $(CFLAGS) -o $(NAME_BONUS)
+		$(CC) $(OBJ_BNS) $(HEAD) $(CFLAGS) -o $(NAME_BONUS)
 
 $(OBJ_BNS_DIR)/%.o: $(SRC_BNS_DIR)/%.c
 		@mkdir -p $(OBJ_BNS_DIR)
-		@$(CC) $(CFLAGS) $(HEAD_BNS) -c $< -o $@
+		@$(CC) $(CFLAGS) $(HEAD) -c $< -o $@
 
 tester: all
 		bash lfrasson_tester.sh

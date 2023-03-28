@@ -6,7 +6,7 @@
 /*   By: ichiro <ichiro@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/24 00:20:36 by ichiro            #+#    #+#             */
-/*   Updated: 2023/03/27 02:47:24 by ichiro           ###   ########.fr       */
+/*   Updated: 2023/03/27 04:57:25 by ichiro           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,6 @@ void	ra(t_list **stack_a)
 	if (*stack_a == NULL || (*stack_a)->next == NULL)
 		return ;
 	rotate_stack(stack_a);
-	write(1, "ra\n", 3);
 	return ;
 }
 
@@ -46,7 +45,6 @@ void	rb(t_list **stack_b)
 	if (*stack_b == NULL || (*stack_b)->next == NULL)
 		return ;
 	rotate_stack(stack_b);
-	write(1, "rb\n", 3);
 	return ;
 }
 
@@ -57,6 +55,5 @@ void	rr(t_list **stack_a, t_list **stack_b)
 		return ;
 	rotate_stack(stack_a);
 	rotate_stack(stack_b);
-	write(1, "rr\n", 3);
 	return ;
 }
