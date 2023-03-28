@@ -6,7 +6,7 @@
 #    By: ichiro <ichiro@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/05/19 21:21:36 by anolivei          #+#    #+#              #
-#    Updated: 2023/03/28 18:54:42 by ichiro           ###   ########.fr        #
+#    Updated: 2023/03/28 18:56:31 by ichiro           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,7 +20,7 @@ OBJ_BNS_DIR = .objs_bns
 CC = clang
 HEAD = -I./includes
 CFLAGS = -g 
-# CFLAGS = -g -Wall -Werror -Wextra
+CFLAGS = -g -Wall -Werror -Wextra
 RM = /bin/rm -rf
 
 SRC =	$(SRC_DIR)/main.c \
