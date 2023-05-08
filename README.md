@@ -1,38 +1,8 @@
-
-
 <h1 align="center">Push_swap</h1>
-
-<h2 align="center">
-Because Swap_push isn’t as natural
-</h2> 
-
-<p align="center">
-  <img alt="Github top language" src="https://img.shields.io/github/languages/top/anolivei/Push_swap42?color=3de069">
-
-  <img alt="Github language count" src="https://img.shields.io/github/languages/count/anolivei/Push_swap42?color=3de069">
-
-  <img alt="Repository size" src="https://img.shields.io/github/repo-size/anolivei/Push_swap42?color=3de069">
-
-  <img alt="Norminette" src="https://github.com/anolivei/Push_swap42/actions/workflows/linter.yaml/badge.svg?event=push">
-
-<p align="center">
-  <a href="#about">About</a> &#xa0; | &#xa0;
-  <a href="#links">Links</a> &#xa0; | &#xa0;
-  <a href="#functions">Functions</a> &#xa0; | &#xa0;
-  <a href="#starting">Starting</a> &#xa0; | &#xa0;
-  <a href="#testing">Testing</a> &#xa0; | &#xa0;
-  <a href="https://github.com/anolivei" target="_blank">Author</a>
-</p>
-
-<br>
 
 ## About ##
 
-- Push_swap is an algorithm project at school 42 and the instructions were given in the [subject](https://github.com/anolivei/Push_swap42/blob/main/en.subject.pdf).
-- We start with two stacks called A and B.
-- A is filled with some random integers (without duplicates) and B is empty.
-- We can perform a limited set of instructions on these stacks and the goal is to sort all these integers using the lowest possible number of actions.
-- The limited set of instructions are:
+Push swap is a C-based algorithm project that involves sorting integer values using two stacks and a set of instructions. The goal is to create a program called push_swap that displays the smallest set of instructions, written in Push swap language, needed to sort the integers provided. 
 
 | Operation | Description |
 | ------------ | ------------ |
@@ -51,9 +21,9 @@ Because Swap_push isn’t as natural
 
 ## Links ##
 
-- [Lfrasson Tester](https://github.com/laisarena/push_swap_tester) (thank you for this amazing tester!)
+- [Lfrasson Tester](https://github.com/laisarena/push_swap_tester)
 
-- [Push_swap Visualizer](https://github.com/o-reo/push_swap_visualizer) (you will need python3)
+- [Push_swap Visualizer](https://github.com/elijahkash/push_swap_gui)
 
 <img width="500px" src="./images/push_swap.gif?raw=true" />
 
