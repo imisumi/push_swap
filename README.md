@@ -2,7 +2,7 @@
 
 ## About ##
 
-This repository contains a solution for the Push Swap project at [42 School](https://42.fr). The goal of the project is to write two programs, `push_swap` and `checker`,  that can sort a stack of integers using a limited set of operations.
+Push swap is a C-based algorithm project that involves sorting integer values using two stacks and a set of instructions. The goal is to create a program called push_swap that displays the smallest set of instructions, written in Push swap language, needed to sort the integers provided. 
 
 | Operation | Description |
 | ------------ | ------------ |
