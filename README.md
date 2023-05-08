@@ -23,7 +23,7 @@ This repository contains a solution for the Push Swap project at [42 School](htt
 
 - [Lfrasson Tester](https://github.com/laisarena/push_swap_tester)
 
-- [Push_swap Visualizer](https://github.com/o-reo/push_swap_visualizer)
+- [Push_swap Visualizer](https://github.com/elijahkash/push_swap_gui)
 
 <img width="500px" src="./images/push_swap.gif?raw=true" />
 
