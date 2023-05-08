@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   checker_utils.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ichiro <ichiro@student.42.fr>              +#+  +:+       +#+        */
+/*   By: imisumi <imisumi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/28 17:52:48 by ichiro            #+#    #+#             */
-/*   Updated: 2023/03/28 18:25:13 by ichiro           ###   ########.fr       */
+/*   Updated: 2023/05/08 14:25:28 by imisumi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,24 +25,7 @@ void	error_alarm(char *str)
 			i++;
 		}
 	}
-	exit(1);
-}
-
-void	print_stacks(t_list **stack_a)
-{
-	t_list	*a;
-
-	a = *stack_a;
-	printf("\nA\n-\n");
-	while (a != NULL)
-	{
-		if (a)
-		{
-			printf("%d\n", a->num);
-			a = a->next;
-		}
-	}
-	printf("\n");
+	exit(EXIT_FAILURE);
 }
 
 int	ft_strcmp(const char *s1, const char *s2)

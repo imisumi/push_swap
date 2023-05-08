@@ -6,7 +6,7 @@
 /*   By: imisumi <imisumi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/28 22:03:34 by ichiro            #+#    #+#             */
-/*   Updated: 2023/01/31 17:51:32 by imisumi          ###   ########.fr       */
+/*   Updated: 2023/05/08 13:06:20 by imisumi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,35 +29,6 @@ int	fastest_push_group(t_list **stack, int group)
 	if (ra <= rra)
 		return (2);
 	return (3);
-}
-
-// pushes b to a in the correct sorted order
-void	sort_final(t_list **stack_a, t_list **stack_b)
-{
-	int	max;
-	int	fast;
-
-	max = 0;
-	fast = 0;
-	max = size_of(stack_b) - 1;
-	while (*stack_b)
-	{
-		if ((*stack_b)->index == max)
-		{
-			pa(stack_a, stack_b);
-			max--;
-		}
-		else
-		{
-			fast = fastest_push(stack_b, max);
-			if (fast == 1)
-				sb(stack_b);
-			else if (fast == 2)
-				rb(stack_b);
-			else if (fast == 3)
-				rrb(stack_b);
-		}
-	}
 }
 
 int	first_push_b(t_list **a, t_list **b, int g)

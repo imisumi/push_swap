@@ -3,14 +3,30 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ichiro <ichiro@student.42.fr>              +#+  +:+       +#+        */
+/*   By: imisumi <imisumi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/20 17:45:45 by ichiro            #+#    #+#             */
-/*   Updated: 2023/03/28 18:19:07 by ichiro           ###   ########.fr       */
+/*   Updated: 2023/05/08 13:43:52 by imisumi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+void	free_list(t_list **lst)
+{
+	t_list	*temp;
+
+	if (!lst)
+	{
+		while (lst)
+		{
+			temp = (*lst)->next;
+			free(*lst);
+			*lst = temp;
+		}
+		lst = NULL;
+	}
+}
 
 // error meseage
 void	error_alarm(char *str)
@@ -26,7 +42,7 @@ void	error_alarm(char *str)
 			i++;
 		}
 	}
-	exit(1);
+	exit(EXIT_FAILURE);
 }
 
 // ascii to integer
@@ -81,5 +97,6 @@ int	main(int argc, char *argv[])
 		small_stack(&data.stack_a, &data.stack_b, argc);
 	else
 		big_stack(&data.stack_a, &data.stack_b, argc);
-	exit(0);
+	free_list(&data.stack_a);
+	exit(EXIT_SUCCESS);
 }

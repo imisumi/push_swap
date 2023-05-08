@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: ichiro <ichiro@student.42.fr>              +#+  +:+       +#+         #
+#    By: imisumi <imisumi@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/05/19 21:21:36 by anolivei          #+#    #+#              #
-#    Updated: 2023/03/28 18:56:31 by ichiro           ###   ########.fr        #
+#    Updated: 2023/05/08 14:17:55 by imisumi          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -79,11 +79,20 @@ tester: all
 vis:
 		python3 -m push_swap_gui
 
-debug_mac: $(OBJ)
-		@gcc $(HEAD) $(SRC) $(CFLAGS) -o "push_swap_debug"
+5: all bonus
+		@x=$$(ruby -e "puts *(0...4).to_a.shuffle.join(' ')"); \
+		./push_swap $$x | ./checker_mac $$x; \
+		./push_swap $$x | ./checker $$x
 
-debug_linux:
-		@gdd $(HEAD) $(SRC) $(CFLAGS) -o "push_swap_debug"
+100: all bonus
+		@x=$$(ruby -e "puts *(0...100).to_a.shuffle.join(' ')"); \
+		./push_swap $$x | ./checker_mac $$x; \
+		./push_swap $$x | ./checker $$x
+
+500: all bonus
+		x=$$(ruby -e "puts *(0...500).to_a.shuffle.join(' ')"); \
+		./push_swap $$x | ./checker_mac $$x; \
+		./push_swap $$x | ./checker $$x
 
 clean:
 		@$(RM) $(OBJ_DIR)
@@ -92,8 +101,6 @@ clean:
 fclean: clean
 		@$(RM) $(NAME)
 		@$(RM) $(NAME_BONUS)
-		@$(RM) push_swap_debug
-		@$(RM) push_swap_debug.dSYM
 
 re: fclean all
 

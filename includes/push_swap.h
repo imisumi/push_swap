@@ -6,7 +6,7 @@
 /*   By: imisumi <imisumi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/21 21:15:55 by ichiro            #+#    #+#             */
-/*   Updated: 2023/03/16 14:22:59 by imisumi          ###   ########.fr       */
+/*   Updated: 2023/05/08 13:32:13 by imisumi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,6 +69,7 @@ void	set_index(t_list *temp, int lowest, int i);
 void	num_index_100(t_list **stack, int argc);
 
 // MAIN
+void	free_list(t_list **lst);
 void	error_alarm(char *str);
 
 // NEW NODE

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   big_stack.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ichiro <ichiro@student.42.fr>              +#+  +:+       +#+        */
+/*   By: imisumi <imisumi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/26 02:03:49 by ichiro            #+#    #+#             */
-/*   Updated: 2023/03/27 03:28:25 by ichiro           ###   ########.fr       */
+/*   Updated: 2023/05/08 13:34:14 by imisumi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,8 @@ void	stack_under_20(t_list **stack_a, t_list **stack_b)
 			ra(stack_a);
 	}
 	sort_final(stack_a, stack_b);
-	exit(0);
+	free_list(stack_a);
+	exit(EXIT_SUCCESS);
 }
 
 void	big_stack(t_list **a, t_list **b, int argc)

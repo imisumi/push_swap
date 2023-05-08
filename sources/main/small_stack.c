@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   small_stack.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ichiro <ichiro@student.42.fr>              +#+  +:+       +#+        */
+/*   By: imisumi <imisumi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/25 19:13:02 by ichiro            #+#    #+#             */
-/*   Updated: 2022/11/25 23:08:29 by ichiro           ###   ########.fr       */
+/*   Updated: 2023/05/08 13:38:42 by imisumi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -105,5 +105,4 @@ void	small_stack(t_list **stack_a, t_list **stack_b, int argc)
 		sort_four(stack_a, stack_b);
 	if (numbers == 5)
 		sort_five(stack_a, stack_b);
-	return ;
 }

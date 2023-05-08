@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   swap.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ichiro <ichiro@student.42.fr>              +#+  +:+       +#+        */
+/*   By: imisumi <imisumi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/24 00:20:06 by ichiro            #+#    #+#             */
-/*   Updated: 2022/11/25 22:58:53 by ichiro           ###   ########.fr       */
+/*   Updated: 2023/05/08 13:36:39 by imisumi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,6 @@ void	sa(t_list **stack_a)
 	sec->next = first;
 	first->next = temp;
 	write(1, "sa\n", 3);
-	return ;
 }
 
 void	sb(t_list **stack_b)
@@ -45,5 +44,4 @@ void	sb(t_list **stack_b)
 	sec->next = first;
 	first->next = temp;
 	write(1, "sb\n", 3);
-	return ;
 }

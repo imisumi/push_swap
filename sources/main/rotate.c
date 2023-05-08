@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   rotate.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ichiro <ichiro@student.42.fr>              +#+  +:+       +#+        */
+/*   By: imisumi <imisumi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/24 00:20:36 by ichiro            #+#    #+#             */
-/*   Updated: 2022/11/25 22:57:46 by ichiro           ###   ########.fr       */
+/*   Updated: 2023/05/08 13:44:15 by imisumi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,6 @@ void	rotate_stack(t_list **stack)
 	*stack = first->next;
 	last->next = first;
 	first->next = NULL;
-	return ;
 }
 
 void	ra(t_list **stack_a)
@@ -38,7 +37,6 @@ void	ra(t_list **stack_a)
 		return ;
 	rotate_stack(stack_a);
 	write(1, "ra\n", 3);
-	return ;
 }
 
 void	rb(t_list **stack_b)
@@ -47,7 +45,6 @@ void	rb(t_list **stack_b)
 		return ;
 	rotate_stack(stack_b);
 	write(1, "rb\n", 3);
-	return ;
 }
 
 void	rr(t_list **stack_a, t_list **stack_b)
@@ -58,5 +55,4 @@ void	rr(t_list **stack_a, t_list **stack_b)
 	rotate_stack(stack_a);
 	rotate_stack(stack_b);
 	write(1, "rr\n", 3);
-	return ;
 }

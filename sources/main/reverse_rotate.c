@@ -6,7 +6,7 @@
 /*   By: imisumi <imisumi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/24 00:25:10 by ichiro            #+#    #+#             */
-/*   Updated: 2022/12/07 18:18:01 by imisumi          ###   ########.fr       */
+/*   Updated: 2023/05/08 13:36:19 by imisumi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,6 @@ void	reverse_rotate_stack(t_list **stack)
 	*stack = last;
 	last->next = first;
 	prev->next = NULL;
-	return ;
 }
 
 void	rra(t_list **stack_a)
@@ -38,7 +37,6 @@ void	rra(t_list **stack_a)
 		return ;
 	reverse_rotate_stack(stack_a);
 	write(1, "rra\n", 4);
-	return ;
 }
 
 void	rrb(t_list **stack_b)
@@ -47,7 +45,6 @@ void	rrb(t_list **stack_b)
 		return ;
 	reverse_rotate_stack(stack_b);
 	write(1, "rrb\n", 4);
-	return ;
 }
 
 void	rrr(t_list **stack_a, t_list **stack_b)
@@ -58,5 +55,4 @@ void	rrr(t_list **stack_a, t_list **stack_b)
 	reverse_rotate_stack(stack_a);
 	reverse_rotate_stack(stack_b);
 	write(1, "rrr\n", 4);
-	return ;
 }

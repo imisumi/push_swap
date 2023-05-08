@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ichiro <ichiro@student.42.fr>              +#+  +:+       +#+        */
+/*   By: imisumi <imisumi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/04 10:51:02 by imisumi           #+#    #+#             */
-/*   Updated: 2023/03/27 00:06:48 by ichiro           ###   ########.fr       */
+/*   Updated: 2023/05/08 14:27:20 by imisumi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -106,42 +106,3 @@ char	*get_next_line(int fd)
 	str = trim_line(str);
 	return (current_line);
 }
-
-// int	main(int argc, char *argv[])
-// {
-// 	char	*line;
-
-// 	if (argc == 1)
-// 		return 0;
-// 	while (1)
-// 	{
-// 		line = get_next_line(STDIN_FILENO);
-// 		if (line == NULL)
-// 			break ;
-// 		do_action (line);
-// 		free(line);
-// 		// printf("%s", line);
-// 	}
-// 	return (0);
-// }
-
-// int	main(void)
-// {
-// 	int		fd;
-// 	char	*line;
-// 	int		i;
-
-// 	i = 0;
-// 	printf("BUFFER = %i\n", BUFFER_SIZE);
-// 	fd = open("giant_line.txt", O_RDONLY);
-// 	while (i < 10)
-// 	{
-// 		line = get_next_line(fd);
-// 		printf("%s", line);
-// 		free(line);
-// 		i++;
-// 	}
-// 	system("leaks -q a.out");
-// 	close(fd);
-// 	return (0);
-// }

@@ -51,55 +51,9 @@ Because Swap_push isn’t as natural
 
 ## Links ##
 
-- [Notion](http://bit.ly/push_swap)
-
 - [Lfrasson Tester](https://github.com/laisarena/push_swap_tester) (thank you for this amazing tester!)
 
 - [Push_swap Visualizer](https://github.com/o-reo/push_swap_visualizer) (you will need python3)
-
-- [Radix Sort](https://medium.com/nerd-for-tech/push-swap-tutorial-fa746e6aba1e) (I used this algorithm in my project)
-
-## Functions ##
-Only the following functions are allowed to be used in this project:
-- write
-- read
-- malloc
-- free
-- exit
-
-## Starting ##
-
-```bash
-# Clone this project
-$ git clone https://github.com/anolivei/Push_swap42
-
-# Access
-$ cd Push_swap42
-
-# Compile the program
-$ make
-
-# Run the project
-$ ./push_swap 5 8 7 2
-
-```
-
-## Testing ##
-
-obs: you must use bash terminal
-```bash
-# on linux OS
-ARG="4 67 3 87 23"; ./push_swap $ARG | ./checker_linux $ARG
-
-# on Mac OS
-ARG="4 67 3 87 23"; ./push_swap $ARG | ./checker_Mac $ARG
-
-# lfrasson tester
-bash lfrasson_tester.sh
-
-# push_swap visualizer
-python3 python_visualizer.py `ruby -e "puts (-50..50).to_a.shuffle.join(' ')"`
-```
 
 <img width="500px" src="./images/push_swap.gif?raw=true" />
 
