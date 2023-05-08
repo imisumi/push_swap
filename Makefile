@@ -6,7 +6,7 @@
 #    By: imisumi <imisumi@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/05/19 21:21:36 by anolivei          #+#    #+#              #
-#    Updated: 2023/05/08 14:17:55 by imisumi          ###   ########.fr        #
+#    Updated: 2023/05/08 15:03:48 by imisumi          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,7 +19,6 @@ OBJ_BNS_DIR = .objs_bns
 
 CC = clang
 HEAD = -I./includes
-CFLAGS = -g 
 CFLAGS = -g -Wall -Werror -Wextra
 RM = /bin/rm -rf
 

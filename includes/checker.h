@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   checker.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ichiro <ichiro@student.42.fr>              +#+  +:+       +#+        */
+/*   By: imisumi <imisumi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/26 20:27:56 by ichiro            #+#    #+#             */
-/*   Updated: 2023/03/28 18:53:45 by ichiro           ###   ########.fr       */
+/*   Updated: 2023/05/08 16:07:35 by imisumi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,6 @@ typedef struct s_data
 
 void	new_node(t_list **stack_a, int number);
 void	error_alarm(char *str);
-void	print_stacks(t_list **stack_a);
 int		ft_atoi(const char *nptr);
 int		ft_strcmp(const char *s1, const char *s2);
 void	do_action(char *line, t_list **a, t_list **b);

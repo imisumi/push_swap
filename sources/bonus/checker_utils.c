@@ -6,7 +6,7 @@
 /*   By: imisumi <imisumi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/28 17:52:48 by ichiro            #+#    #+#             */
-/*   Updated: 2023/05/08 14:25:28 by imisumi          ###   ########.fr       */
+/*   Updated: 2023/05/08 15:15:51 by imisumi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,6 +67,6 @@ int	ft_atoi(const char *nptr)
 	}
 	res = res * neg;
 	if (res > 2147483647 || res < -2147483648)
-		error_alarm("Error2\n");
+		error_alarm("Error\n");
 	return (res);
 }

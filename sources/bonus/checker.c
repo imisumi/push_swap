@@ -6,7 +6,7 @@
 /*   By: imisumi <imisumi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/26 20:26:02 by ichiro            #+#    #+#             */
-/*   Updated: 2023/05/08 14:26:14 by imisumi          ###   ########.fr       */
+/*   Updated: 2023/05/08 15:15:06 by imisumi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,22 +85,14 @@ void	get_input(t_list **stack_a, t_list **stack_b)
 
 int	main(int argc, char *argv[])
 {
-	int		p_flag;
-	char	*line;
 	t_data	data;
 
 	data.stack_a = NULL;
 	data.stack_b = NULL;
 	if (argc == 1)
 		return (0);
-	if (!ft_strcmp(argv[1], "-p"))
-		p_flag = 1;
-	else
-		p_flag = 0;
 	create_list(&data.stack_a, argc, argv);
 	get_input(&data.stack_a, &data.stack_b);
-	if (p_flag)
-		print_stacks(&data.stack_a);
 	if (check_sorted(&data.stack_a, &data.stack_b) == 0)
 		write(1, "OK\n", 3);
 	else
